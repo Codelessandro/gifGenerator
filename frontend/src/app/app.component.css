@@ -3,3 +3,21 @@ span {
   font-weight:bold;
   font-size:26px;
 }
+
+.grid {
+  margin-top:2em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+}
+
+
+mat-form-field {
+  display: block;
+  width:200px;
+}
+
+.white {
+  font-size:14px;
+  color: white;
+  font-weight: normal;
+}

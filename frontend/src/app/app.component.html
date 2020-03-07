@@ -1,13 +1,89 @@
-<form>
-  <input type="text" name="title" [(ngModel)]="title" />
-</form>
+<div class="grid">
+  <div>
 
 
-<div style="background-size: 100%; position:relative; background-image:url('assets/torahhouse.jpg'); height:calc(1323px/2); width:calc(898px/2);">
-  <div style="position:absolute; top:60px;  text-align:center; width:100%">
-    <span>
-    {{ title }}
-    </span>
+    <div
+      style="background-size: 100%; position:relative; background-image:url('assets/torahhouse.jpg'); height:calc(1323px/2); width:calc(898px/2);">
+
+
+      <div style="position:absolute; top:40px;  text-align:center; width:100%"><span>{{ data?.title }}</span></div>
+
+
+      <div style="position:absolute; top:70px;  text-align:center; width:100%"><span style="font-size:75%">{{ data?.subtitle }}</span></div>
+
+
+
+      <div style="position:absolute; top:300px;  text-align:center; width:100%"><span style="font-size:100%">{{ data?.when }}</span></div>
+      <div style="position:absolute; top:320px;  text-align:center; width:100%"><span style="font-size:100%">{{ data?.time }}</span></div>
+      <div style="position:absolute; top:340px;  text-align:center; width:100%"><span style="font-size:75%">{{ data?.web1 }}</span></div>
+      <div style="position:absolute; top:352px;  text-align:center; width:100%"><span style="font-size:75%">{{ data?.web2 }}</span></div>
+      <div style="position:absolute; padding:2em; top:420px;   width:80%"><span class="white">{{ data?.longText }}</span></div>
+
+
+    </div>
+  </div>
+
+  <div>
+
+
+    <form>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput name="title" [(ngModel)]="data.title">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+
+        <mat-label>SubTitle</mat-label>
+        <input matInput name="subtitle" [(ngModel)]="data.subtitle">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>When</mat-label>
+        <input matInput name="when" [(ngModel)]="data.when">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Time</mat-label>
+        <input matInput name="time" [(ngModel)]="data.time">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Web1</mat-label>
+        <input matInput name="web1" [(ngModel)]="data.web1">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Web2</mat-label>
+        <input matInput name="web2" [(ngModel)]="data.web2">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>langer Text</mat-label>
+        <textarea matInput name="longText" [(ngModel)]="data.longText"></textarea>
+      </mat-form-field>
+
+    </form>
+  </div>
+
+  <div>
+    <button mat-raised-button color="warn" (click)="showExample()">Show Example</button>
+    <br />
+    <br />
+
+    <button mat-raised-button color="warn" (click)="saveAs('pdf')">Save as PDF</button>
+    <br />
+    <br />
+
+    <button mat-raised-button color="warn" (click)="saveAs('jpeg')">Save as JPEG</button>
+
   </div>
 
 </div>
+
